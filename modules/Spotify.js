@@ -46,6 +46,9 @@ async function getSongs(artist) {
  */
 async function getRandomSong(artist) {
     let songs = await getSongs(artist);
+    if(songs.length == 0) {
+        return [];
+    }
     return songs[Math.floor(Math.random()*songs.length)];
 }
 
