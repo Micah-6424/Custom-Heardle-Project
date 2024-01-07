@@ -211,7 +211,7 @@ body #quarter1 {
   right: -175px;
 }
 body #quarter2 {
-  bottom: -40px;
+  bottom: -20px;
   left: -175px;
   transform: scaleX(-1);
 }

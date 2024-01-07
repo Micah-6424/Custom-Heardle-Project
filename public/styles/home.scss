@@ -1,5 +1,6 @@
 // vars
 $yellow: #E5CA68;
+$pink: #F9627D;
 
 // font
 // @font-face {
@@ -125,7 +126,7 @@ body {
                 text-align: center;
                 font-family: Cardo;
                 font-size: 2rem;
-                color: #F9627D;
+                color: $pink;
                 opacity: 1;
                 position: absolute;
                 top: 50%;
@@ -141,7 +142,7 @@ body {
                 text-align: center;
                 font-family: Cardo;
                 font-size: 2rem;
-                color: #F9627D;
+                color: $pink;
                 opacity: 1;
                 position: absolute;
                 top: 50%;
@@ -218,7 +219,7 @@ body {
             &:hover {
                 // transition the background color to a darker shade of blue
                 
-                background-color: #F9627D;
+                background-color: $pink;
                 transition: background-color  0.5s ease;
 
             }
@@ -257,7 +258,7 @@ body {
     }
 
     #quarter2 {
-        bottom: -40px;
+        bottom: -20px;
         left: -175px;
         transform: scaleX(-1);
     }

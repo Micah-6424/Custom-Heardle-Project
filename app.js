@@ -20,11 +20,22 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-    console.log("post");
     let songs = await getSongs(req.body.artist);
-    res.status(200).json({songs});
+    
+    if(songs.length == 0) { //if no songs are found
+        res.status(204).send();
+        return;
+    }
+    // if songs were found
+    res.status(200).send();
 });
 
+
+// app get /artist-name
+app.get("/:artist", async (req, res) => {    
+    let artist = req.params.artist.split("-").join(" ");
+    
+});
 
 
 // start server
