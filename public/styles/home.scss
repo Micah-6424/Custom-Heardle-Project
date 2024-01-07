@@ -1,0 +1,260 @@
+// vars
+$yellow: #E5CA68;
+
+// font
+// @font-face {
+//     font-family: 'Cardo';
+//     src: url("./Cardo.ttf") format("truetype");
+//  }
+
+// styles
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: $yellow;
+    font-family: Cardo;
+    font-size: 1rem; /* Adjust the base font size as needed */
+    min-width: 320px; /* Set a minimum width for the layout */
+    height: 100%;
+    overflow: hidden;
+    
+    header {
+        .down_triangle {
+            // width is full width of screen
+            width: 100%;
+            // height is 1/3 of screen
+            height: 44vh;
+            // background is white
+            background-color: white;
+            // make it a triangle with its point downwards
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            #underline1 {
+                width: 30.375em;
+                height: 43px;
+                flex-shrink: 0;
+                border-radius: 142px;
+                background: #90AFFF;
+            }
+
+            #underline2 {
+                width: 339px;
+                height: 43px;
+                flex-shrink: 0;
+                border-radius: 142px;
+                background: #7E9AE0;
+            }
+
+            #underline3 {
+                width: 185px;
+                height: 43px;
+                flex-shrink: 0;
+                border-radius: 142px;
+                background: #5E75AF;
+            }
+
+            #underline4 {
+                width: 43px;
+                height: 43px;
+                flex-shrink: 0;
+                border-radius: 142px;
+                background: #3C4E7D;
+            }
+
+            .underline {
+                margin-top: 10px
+            }
+
+        }
+    }
+
+    main {
+        // center the main content horizontally using transform and absolute positioning
+        position: absolute;
+        top:47%;
+        left: 50%;
+        transform: translateX(-50%);
+
+
+
+
+    
+        #input_container {
+            width: 1179px;
+            height: 396px;
+            flex-shrink: 0;
+            border-radius: 105px;
+            background: #0C4375;
+
+            input {
+                width: 472px;
+                height: 69px;
+                border: none;
+                // center vertically and horizontally inside input_container
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            }
+            // change the input placeholder text font family
+            input::placeholder {
+                font-family: Cardo;
+                font-size: 2rem;
+                color: black;
+                opacity: 1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            // make it so the typed text is centered
+            input:focus {
+                text-align: center;
+                font-family: Cardo;
+                font-size: 2rem;
+                color: black;
+                opacity: 1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            // hide placeholder text when typing
+            input:focus::placeholder {
+                color: transparent;
+            }
+
+            input:not(:focus):not([value=""]) {
+                text-align: center;
+                font-family: Cardo;
+                font-size: 2rem;
+                color: black;
+                opacity: 1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        #speaker1 {
+            left:2em;
+        }
+
+        #speaker2 {
+            right:2em;
+        }
+
+        .speaker {
+            position: absolute;
+            width: 221px;
+            height: 221px;
+            border-radius: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            background-color: black;
+            box-shadow: 0px 4px 4px #1f283c ;
+
+        }
+
+        .inner_circle {
+            position: absolute;
+            width: 137px;
+            height: 137px;
+            border-radius: 100%;
+            z-index: 3;
+            background-color: white;
+            // center vertically and horizontally
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .inner_most_circle {
+            position: absolute;
+            width: 61px;
+            height: 61px;
+            border-radius: 100%;
+            z-index: 4;
+            background-color: #3C4E7D;
+            // center vertically and horizontally
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        
+        #submit {
+            width: 498px;
+            height: 62px;
+            // center insdie input_container
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translate(-50%, -10%);
+            border: 0;
+            border-radius: 55px;
+            background: #7E9AE0;
+            font-size: 40px;
+            font-family: Cardio;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+            &:hover {
+                // transition the background color to a darker shade of blue
+                
+                background-color: #F9627D;
+                transition: background-color  0.5s ease;
+
+            }
+        }
+    }
+
+    .eighth {
+        width: 190px;
+        height: 190px;
+        background: url("../imgs/eighth.png"),  50% / cover no-repeat;
+        position: absolute;
+    }
+
+    #eighth1 {
+        top:-260px;
+        left:-155px;
+    }
+
+    #eighth2 {
+        bottom:-55px;
+        right:-160px;
+        // scale down
+        transform: scale(0.8);
+    }
+
+    .quarter {
+        width: 210px;
+        height: 210px;
+        background: url("../imgs/quarter.png"),  50% / cover no-repeat;
+        position: absolute;
+    }
+
+    #quarter1 {
+        top: -200px;
+        right: -175px;
+    }
+
+    #quarter2 {
+        bottom: -40px;
+        left: -175px;
+        transform: scaleX(-1);
+    }
+}
+
