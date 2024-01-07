@@ -13,7 +13,6 @@ app.set("view engine", "ejs");
 let port = process.env.PORT || 3000;
 
 
-
 // routes
 app.get("/", (req, res) => {
     res.render("home");
@@ -35,6 +34,13 @@ app.post("/", async (req, res) => {
 app.get("/:artist", async (req, res) => {    
     let artist = req.params.artist.split("-").join(" ");
     
+    let songs = await getSongs(artist)
+    
+    if(songs.length == 0) { //if no songs are found
+        res.redirect("/");
+        return;
+    }
+    res.json(songs);
 });
 
 
