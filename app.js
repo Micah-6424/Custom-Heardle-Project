@@ -2,7 +2,7 @@
 require("dotenv").config();
 let fs = require("fs");
 let express = require("express");
-const { getSongs, updateBearer,getRandomSong } = require("./modules/Spotify");
+const { getSongs, updateBearer,getSongImg} = require("./modules/Spotify");
 
 // setup app instance
 let app = express();
@@ -35,12 +35,17 @@ app.get("/:artist", async (req, res) => {
     let artist = req.params.artist.split("-").join(" ");
     
     let songs = await getSongs(artist)
-    
     if(songs.length == 0) { //if no songs are found
         res.redirect("/");
         return;
     }
-    res.json(songs);
+    
+    let song_names = songs.map(song => song.name);
+    // get a random song using math.random
+    let the_song = songs[Math.floor(Math.random()*songs.length)];
+    the_song["img"] = await getSongImg(the_song.id);
+    // render the game page
+    res.render("game",{song_names,the_song,artist});
 });
 
 

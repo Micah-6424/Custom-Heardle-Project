@@ -26,9 +26,6 @@ async function updateBearer(updateNow=false) {
     }
 }
 
-// artist: string
-//return array of songs
-
 /**
  * given a string artist, returns an array of song objects by artist
  * @param {string} artist
@@ -123,6 +120,19 @@ async function getSongsFromAlbums(albums) {
     return ret;
 }
 
+async function getSongImg(song_id) {
+    let img = fetch("https://api.spotify.com/v1/tracks/"+ song_id, {
+        headers: {
+            "Authorization": "Bearer " + process.env.BEARER
+        }
+    }).then(res => res.json()).then(res => {
+        return res.album.images[0].url;
+    
+    });
+
+    return img;
+}
+
 // found this function on stack overflow, it's not mine
 function _setEnvValue(key, value) {
 
@@ -143,4 +153,4 @@ function _setEnvValue(key, value) {
 }
 
 
-module.exports = {updateBearer, getSongs,getRandomSong};
+module.exports = {updateBearer,getSongs,getRandomSong,getSongImg};

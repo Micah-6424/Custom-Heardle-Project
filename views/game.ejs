@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heard It!</title>
+</head>
+<body>
+    <button id="play_pause">play</button>
+
+
+    <script>
+        // save variables sent from server
+        const the_song = JSON.parse(unescape('<%- JSON.stringify(the_song) %>'));
+        const artist = unescape("<%=artist%>");
+    </script>
+    <script src="./scripts/game.js"></script>
+</body>
+</html>
