@@ -80,7 +80,7 @@ async function getAlbumsByArtistID(artistID) {
         let output =  res.items;
         let albums = {};
         for(let i = 0; i < output.length; i++) {
-            if(Object.keys(albums).includes(output[i].name) || output[i].total_tracks < 5 || output[i].name.includes("Deluxe") || output[i].name.includes("Remix") || output[i].name.includes("Remastered") || output[i].name.includes("Live") || output[i].name.includes("Acoustic") || output[i].name.includes("Instrumental") || output[i].name.includes("Demo") || output[i].name.includes("Edit") || output[i].name.includes("Version") || output[i].name.includes("Mix")) {
+            if(Object.keys(albums).includes(output[i].name) || output[i].total_tracks < 5 || output[i].name.includes("Deluxe") || output[i].name.includes("Remix") || output[i].name.includes("Remastered") || output[i].name.includes("Live") || output[i].name.includes("live") || output[i].name.includes("Acoustic") || output[i].name.includes("Instrumental") || output[i].name.includes("Demo") || output[i].name.includes("Edit") || output[i].name.includes("Version") || output[i].name.includes("Mix")) {
                 continue;
             }
             albums[output[i].name] = output[i];

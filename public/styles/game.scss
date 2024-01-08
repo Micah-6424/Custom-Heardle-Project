@@ -1,0 +1,58 @@
+// vars
+$yellow: #E5CA68;
+$pink: #F9627D;
+$blue: #0C4375;
+$dark_blue: #3C4E7D;
+
+// selectors
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $yellow;
+}
+
+#dropdown_container {
+    // make dropdown look more modern
+    background-color: $yellow;
+    border: 1px solid $pink;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    &:hover {
+        cursor: pointer;
+    }
+
+    #dropdown {
+        // make dropdown look more modern
+        background-color: $yellow;
+        border: 1px solid $pink;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+
